@@ -1,6 +1,6 @@
-# world-campus
+# World Campus
 
-> Supporting the Decision of Campus for Exchange Programs
+> Supporting the Choice of University for Exchange Programs
 
 ## Abstract
 
@@ -85,10 +85,78 @@ repeatedly.
 
 ### Personal Information
 
+The application should be able to keep the applicant's information. Regarding to
+the eligibility of the programs, one's major, English qualifications and other
+specific items should be noted first.
+
 ### University List
+
+The application should be able to display all universities which exist in the
+recruit sheet. Besides with the university's name, some basic information such
+as region, country and others also should be shown. The user should be able to
+manipulate multiple seraching and sorting conditions.
 
 ### University in Details
 
+After clicking one of universities in the list, the user should be able to see
+the detailed information about the university and its locations. The top of the
+layout contains the related university's image if it exists. University's
+homepage and its program's webpage also should be available. There is an
+requirements section that contains minimum level of applicable students. Another
+sections are about its courses, city and accomodation. The last section shows
+how many and who have been the university from my origin. In addition, the
+university's world ranking should be contained.
+
 ### Judgements and Ratings
 
-### Sorting Wizard
+In the details, the user should be able to make judgements whether I can apply
+or not for each item. There should be a qualitative judgements like negative or
+positive with ratings (like 1 to 5). The automatic determinations should be
+provided if there is enough personal information with its corresponding
+university's information. For items that consists of short paragraphs, those
+should be able to make a rate and keep a comment.
+
+### Ranking Wizard
+
+In order to make a list of prefered universities, one's personal criterions
+should be kept. All qualitative and quantitative items should be registered and
+handled. Through the personal options above, the list of universities should be
+able to generated with their scores.
+
+## Development Environment
+
+This application runs on ReactJS without any backend frameworks. Some static
+resources might be delivered through another CDN servers. The layouts mainly
+convern about mobile environment, not a desktop browser. Development and test
+are done with MacBook Air (2020) and iPhone SE (2020). The guaranteed web
+browser is only the latest version of Safari.
+
+## Specifications
+
+### Enter Personal Information
+
+In the Profile tab, all fields will be set as default if there is nothing
+modified before. If any field is changed, the 'cancel' and 'save' buttons will
+appear on the layout. Followings are the items user can enter;
+
+* College
+* Department
+* GPA (4.5, 4.3, 4.0 in maximum)
+* English Qualifications (TOEFL IBT, IELTS, TOEFL ITP)
+* Is taking a leave of absence
+
+### University List
+
+#### Load Data
+
+The entire information is provided in JSON, which will be manipulated by the
+client. When there is a update patch that is informed through HTTP API, the
+cached file will be updated and related data is also manipulated properly.
+
+#### Filters and Sort Conditions
+
+For the begining, all universities are displayed and sorted with their unique
+identifiers. On the main layout, there are 4 options at maximums and other
+conditions will be shown after 'expand' button is pressed.
+
+[](## Use Cases)

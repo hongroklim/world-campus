@@ -157,6 +157,13 @@ cached file will be updated and related data is also manipulated properly.
 
 For the begining, all universities are displayed and sorted with their unique
 identifiers. On the main layout, there are 4 options at maximums and other
-conditions will be shown after 'expand' button is pressed.
+conditions will be shown after 'expand' button is pressed. When a condition is
+newly applied or changed, its icon will appear on the new line. It will
+disappear if a user click it.
+
+#### Display Items
+
+For each university in the list, its title and some specifications noted in
+filters will be displayed.
 
 [](## Use Cases)

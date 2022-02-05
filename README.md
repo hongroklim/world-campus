@@ -4,7 +4,7 @@
 
 ## Abstract
 
-World Campus is an mobile application that can support decision for a student
+World Campus is a mobile web application that can support the decision for a student
 considering which campus to apply for an exchange program. This application
 provides enormous information about outgoing university and countries with
 user-friendly layouts and designs. While assisting the arrangement of
@@ -145,6 +145,9 @@ appear on the layout. Followings are the items user can enter;
 * English Qualifications (TOEFL IBT, IELTS, TOEFL ITP)
 * Is taking a leave of absence
 
+The user can define one's own criteria upon selecting the prefered universities.
+It can be added 5 at most. Its name can be modified and dropped.
+
 ### University List
 
 #### Load Data
@@ -159,11 +162,80 @@ For the begining, all universities are displayed and sorted with their unique
 identifiers. On the main layout, there are 4 options at maximums and other
 conditions will be shown after 'expand' button is pressed. When a condition is
 newly applied or changed, its icon will appear on the new line. It will
-disappear if a user click it.
+disappear if a user click it. Followings are the items;
+
+* Region
+* Country (Name, Population, GDP, Territory)
+* University Association (GE3, AACSB, EQUiS, n+i, ISEP)
+* Size (Faculty, Student, Exchange Student)
+* Applicable
+* Favorites
 
 #### Display Items
 
 For each university in the list, its title and some specifications noted in
-filters will be displayed.
+filters will be displayed. If the item area is clicked, user will see the
+details of that university.
 
-[](## Use Cases)
+* Title
+* Region
+* Country
+* Applicable
+* Favorites
+
+### University In Details
+
+#### Summary
+
+On the top of the layout, the university's images will appear if they exist.
+Otherwise, the section will be replaced with an anonymous university icon.
+University's title will be labeled with bold and larger text format. Other texts
+are same with one in the list. There is editable note area, which can be
+modified by the user. The 'Heart' icon is for Favorite label and the university
+is registered when the icon is clicked.
+
+#### Qualifications
+
+Qualification section will have a green border if all requirements are
+fulfilled. If there is any unfitted condition, it will have a red one. In other
+case, the border's color is default. All qualification items have a current
+status; either 'Fit', 'Unfit' or 'Unrated'. The editable area will appear when 
+the user click. After an user changes any status, the entire status will be
+updated if necessary. All specificaions have their fact basis which is provided
+with external links or files appended with comment.
+
+#### Details
+
+Quantatitative statistics about the university will be displayed. Some of items
+have additional labels like 'small', 'middle' and 'large'. In addition, the
+average of all universities will be appended for some specifications. In regard
+of the city and country, its basic information and global rankings will appear.
+For each item, user can input one's subjective ratings, like 1 to 5. Besides of
+them, the user's custom criteria can be modified.
+
+#### External Links
+
+On the bottom of the layout, related external links will be displayed. When the
+user clicks one of them, the new page will be loaded in another tab or window.
+
+* Recruit Information
+* University's official web site
+* Google Search result of the university
+* Wikipedia of the university, city and country
+
+### Automatic Ranking
+
+If the user clicks the 'Setting' icon, the configuration pannel will appear.
+There will be default settings. Most of search filters can be applied. There
+are checkboxes whether the result list contains the unqualified ones or not.
+
+The user can adjust the priorities of sorting criteria and assign their weights.
+The total weights will be 10 at maximum. User can modify the list of criteria
+and their weights. These weights will be transformed into ratio among the
+overall criteria. For a classification, User can define the items' priority
+in details, which is allocated in integer.
+
+Through the user-defined criteria, the ranking of universities is automatically
+calculated. The result page will show the total score and the ranked
+universities' scores. In addition, their specific scores will be displayed
+beisides of its overall one. The excluded universities won't appear.

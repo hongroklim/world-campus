@@ -43,6 +43,7 @@ information is usually specified in the target university's posts.
 * Official link
 * Region
 * Country
+* City
 * Established year
 * Student number
 * Faculty number
@@ -61,8 +62,34 @@ information is usually specified in the target university's posts.
 
 ## Location
 
-References
+Fact data is derived from the references below;
 
 * [Our World in Data](https://ourworldindata.org)
 * [OECD Stats](https://stats.oecd.org)
 * [UN Data](http://data.un.org)
+* [Human Development Report](https://hdr.undp.org/en)
+* [Race Diversity](https://www.infoplease.com/world/social-statistics/ethnicity-and-race-countries)
+* [Cost of Living](https://www.numbeo.com/cost-of-living/region_rankings.jsp)
+
+### City
+
+* Name
+* Country
+* GPS location
+* Average Temperature for month
+* Cost of living
+
+### Country
+
+* Name
+* Region
+* Population
+* Health
+* National income and outcome
+* Employment
+* Human security
+* Mobility
+* Perceptions of well-being
+* Human rights treaties
+* Gender inequality
+* COVID-19 vaccination rate

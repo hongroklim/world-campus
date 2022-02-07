@@ -105,7 +105,8 @@ homepage and its program's webpage also should be available. There is an
 requirements section that contains minimum level of applicable students. Another
 sections are about its courses, city and accomodation. The last section shows
 how many and who have been the university from my origin. In addition, the
-university's world ranking should be contained.
+university's world ranking should be contained. Right below the city's
+information, its location is displayed on external API.
 
 ### Judgements and Ratings
 
@@ -211,7 +212,16 @@ have additional labels like 'small', 'middle' and 'large'. In addition, the
 average of all universities will be appended for some specifications. In regard
 of the city and country, its basic information and global rankings will appear.
 For each item, user can input one's subjective ratings, like 1 to 5. Besides of
-them, the user's custom criteria can be modified.
+them, the user's custom criteria can be modified. 
+
+For each university's statistics, the indicator shows its global ranking,
+regional ranking and South Korea's one together.
+
+#### Images
+
+The university's location will be displayed with the external map API. The
+images of university or city will be shown through the picture slides which
+can be changed.
 
 #### External Links
 

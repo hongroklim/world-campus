@@ -1,3 +1,7 @@
+# Python related
+.venv
+.ipynb_checkpoints
+
 # Logs
 logs
 *.log

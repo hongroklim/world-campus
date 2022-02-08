@@ -14,15 +14,20 @@ information is arranged nicely in the official notice. The detailed
 information is usually specified in the target university's posts. 
 
 * Name
+* University
 * Official link
 * Recruit number
+* Period
 * Recruit restriction
   * Major
   * Nationality
   * Leave of absence
+  * Others
 * Qualification
   * GPA
-  * TOEFL
+  * TOEFL IBT (RLSW)
+  * IELTS (RLSW)
+  * TOEFL ITP
 * Course
   * Restriction
   * Taking other major
@@ -41,6 +46,7 @@ information is usually specified in the target university's posts.
 
 * Name
 * Official link
+* Map link
 * Region
 * Country
 * City
@@ -58,7 +64,7 @@ information is usually specified in the target university's posts.
 * Ranking
   * Overall
   * Computer Science
-  * Business
+  * Art & Humanities
 
 ## Location
 

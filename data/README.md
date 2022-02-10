@@ -54,13 +54,6 @@ information is usually specified in the target university's posts.
 * Student number
 * Faculty number
 * Campus Size
-* Affiliations
-  * ABeaK
-  * AACSB
-  * EQUIS
-  * nplusi network
-  * ISEP
-  * GE3
 * Ranking
   * Overall
   * Computer Science
@@ -84,19 +77,25 @@ Fact data is derived from the references below;
 * Country
 * Average temperature 
 * Average precipitation
-* Cost of living
 
 ### Country
 
 * Name
 * Region
-* Population
-* Health
-* National income and outcome
-* Employment
-* Human security
-* Mobility
-* Perceptions of well-being
-* Human rights treaties
-* Gender inequality
-* COVID-19 vaccination rate
+* Population (7, Total)
+* Health (8, life expectancy, health expenditure)
+* Education (9, at least secondary, tertiary)
+* National income and outcome (10, total, per capita)
+* Cost of living (10, price index)
+* Employment (11, labor force participation, unemployeement)
+* Human security (12, homicide, suicide)
+* Financial flow (13, Trade, foregin investment)
+* Human mobility (13, international student, tourists)
+* Gender inequality (5, inequality index, rank, parliament)
+* Environment (D4, fossil fuel, carbon dioxide per GDP)
+
+COVID-19
+
+* Infection
+* Death
+* Vaccination

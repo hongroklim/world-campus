@@ -1,0 +1,89 @@
+sequence,name,region,country,city,CityId
+1,GE3(Global Engineering Education Exchange),Others,,,
+2,ISEP(International Student Exchange Programs),Others,,,
+3,University of Twente,Europe,Netherlands,Enschede,145
+4,Amsterdam University of Applied Sciences,Europe,Netherlands,,
+5,Amsterdam University of Applied Sciences,Europe,Netherlands,,
+6,Amsterdam University of Applied Sciences,Europe,Netherlands,,
+7,Fontys University of Applied Sciences,Europe,Netherlands,,
+8,Hanze University of Applied Sciences Groningen,Europe,Netherlands,,
+9,The Hague University of Applied Sciences,Europe,Netherlands,,
+10,The Hague University of Applied Sciences,Europe,Netherlands,,
+11,VIA University College,Europe,Denmark,,
+12,Esslingen University of Applied Sciences,Europe,Germany,,
+13,European University of Applied Sciences,Europe,Germany,,
+14,European University Viadrina,Europe,Germany,,
+15,Frankfurt School of Finance & Management,Europe,Germany,,
+16,International School of Management,Europe,Germany,,
+17,Karlshochschule International University,Europe,Germany,,
+18,Konstanz University of Applied Sciences,Europe,Germany,Konstanz,312
+19,University of Applied Sciences Neu-Ulm ,Europe,Germany,,
+20,Pforzheim University,Europe,Germany,,
+21,Reutlingen University,Europe,Germany,,
+22,The University of Bamberg,Europe,Germany,,
+23,University of Konstanz,Europe,Germany,Konstanz,312
+24,University of Luxembourg,Europe,Luxembourg,Luxembourg,192
+25,Kaunas University of Technology,Europe,Lithuania,Kaunas,607
+26,Vilnius Gediminas Technical University,Europe,Lithuania,Vilnius,204
+44,University of Liege,Europe,Belgium,,
+47,Linkoping University,Europe,Sweden,Linköping,1043
+48,University of Lausanne,Europe,Swiss,Lausanne,193
+49,University of St. Gallen,Europe,Swiss,St. Gallen,312
+50,Zurich University of Applied Sciences,Europe,Swiss,,
+51,Polytechnic University of Catalonia,Europe,Spain,,
+52,Universidad Autonoma de Madrid,Europe,Spain,Madrid,195
+53,Universidad Catolica de Valencia 'San Vicente Martir',Europe,Spain,,
+54,University of Lleida,Europe,Spain,,
+59,The University of Sheffield,Europe,UK,Sheffield,31
+60,The University of Leeds,Europe,UK,Leeds,39
+61,MCI Management Center Innsbruck,Europe,Austria,,
+62,Kyiv National Linguistic University,Europe,Ukraine,,
+63,University of Genoa,Europe,Italy,Genoa,1948
+64,Polytechnic University of Milan,Europe,Italy,Milan,603
+71,Hacettepe University,Europe,Turkey,Ankara,48
+72,Sabanci University,Europe,Turkey,Istanbul,47
+73,Audencia Business School,Europe,France,,
+74,CentraleSupelec,Europe,France,,
+75,EDHEC Business School,Europe,France,,
+76,ISC Paris,Europe,France,,
+77,KEDGE Business School,Europe,France,,
+78,Rennes School of Business,Europe,France,,
+79,University Paris 8,Europe,France,,
+80,Hanken School of Economics,Europe,Finland,,
+27,University of Malaya,Asia,Malaysia,Kuala Lumpur,82
+46,Universiti Brunei Darussalam,Asia,Brunei,Bandar Seri Begawan,95
+55,Nanyang Technological University,Asia,Singapore,Singapore,234
+56,Singapore University of Technology and Design,Asia,Singapore,Singapore,234
+65,Telkom University,Asia,Indonesia,Bandung,2237
+85,The Chinese University of Hong Kong,Asia,Hong Kong,Hong Kong,1
+86,Hang Seng University of Hong Kong,Asia,Hong Kong,,
+87,The Education University of Hong Kong,Asia,Hong Kong,,
+88,The Hong Kong Polytechnic University,Asia,Hong Kong,Hong Kong,1
+28,North Carolina State University,North America,United States of America,Raleigh,813
+29,Arizona State University,North America,United States of America,Tempe,848
+30,Virginia Polytechnic Institute and State University,North America,United States of America,Blacksburg,817
+31,Angelo State University,North America,United States of America,,
+32,Savannah State University,North America,United States of America,,
+33,Westminster College,North America,United States of America,,
+34,Kennesaw State University,North America,United States of America,,
+35,Ohio Northern University,North America,United States of America,,
+36,Portland State University,North America,United States of America,Portland,810
+37,Georgia State University,North America,United States of America,Atlanta,268
+38,Northern Arizona University,North America,United States of America,Flagstaff,757
+39,State University of New York at Oswego,North America,United States of America,,
+40,University of Oregon,North America,United States of America,Eugene,753
+41,University of Central Oklahoma,North America,United States of America,,
+42,University of Hawai'I at Hilo,North America,United States of America,,
+43,University of Nebraska at Kearney,North America,United States of America,,
+66,York University,North America,Canada,Toronto,264
+67,Concordia University,North America,Canada,Montreal,634
+68,Ecole de Technologie Superieure,North America,Canada,,
+69,Universite de Montreal,North America,Canada,Montreal,634
+45,Federal University of Minas Gerais,South America,Brazil,Belo Horizonte,1062
+58,Universidad ECOTEC,South America,Ecuador,,
+57,United Arab Emirates University,Middle East,United Arab Emirates,Al Ain,1395
+70,Kuwait University,Middle East,Kuwait,Kuwait City,1498
+81,Queensland University of Technology,Oceania,Australia,Brisbane,320
+82,University of South Australia,Oceania,Australia,Magill,1676
+83,University of New South Wales,Oceania,Australia,Sydney,300
+84,Deakin University,Oceania,Australia,Geelong,402

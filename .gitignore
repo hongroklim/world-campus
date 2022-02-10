@@ -1,3 +1,6 @@
+# Spreadsheet
+*.numbers
+
 # Python related
 .venv
 .ipynb_checkpoints

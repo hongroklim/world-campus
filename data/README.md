@@ -76,13 +76,14 @@ Fact data is derived from the references below;
 * [Human Development Report](https://hdr.undp.org/en)
 * [Race Diversity](https://www.infoplease.com/world/social-statistics/ethnicity-and-race-countries)
 * [Cost of Living](https://www.numbeo.com/cost-of-living/region_rankings.jsp)
+* [Weathers](https://worldweather.wmo.int/en/dataguide.html)
 
 ### City
 
 * Name
 * Country
-* GPS location
-* Average Temperature for month
+* Average temperature 
+* Average precipitation
 * Cost of living
 
 ### Country

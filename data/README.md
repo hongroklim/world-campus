@@ -4,8 +4,21 @@ Based on the [offical recruit notice](2022-2-exchange-univ.csv) from the
 origin ueiversity, the information about the exchange program, the
 universities and their cities & countries is gathered and arranged. The items
 to be collected can be specified through the [development
-document](../README.md). The result dataset is provided in JSON format within
-one or two files.
+document](../README.md). The result dataset is provided in CSV or JSON format.
+
+## Output
+
+* [program.csv](./univ-program/program.csv),
+  [university.csv](./univ-program/university.csv) :
+Program and university list
+* [univ-with-qs.csv](./qs-rankings/univ-with-qs.csv) :
+QS Rankings of the universities
+* [city-weather.json](./weather/city-weather.json) :
+Climates of the cities where the universities are located
+* [country-stat.csv](./country/country-stat.csv) :
+Human Development Index of the countries
+* [covid19-graph.csv](./covid19/covid19-graph.csv) :
+COVID-19 graph links
 
 ## Exchange Program
 
@@ -94,8 +107,9 @@ Fact data is derived from the references below;
 * Gender inequality (5, inequality index, rank, parliament)
 * Environment (D4, fossil fuel, carbon dioxide per GDP)
 
-COVID-19
+#### COVID-19
 
-* Infection
-* Death
-* Vaccination
+* Case : Biweekly confirmed COVID-19 cases per million people
+* Death : Biweekly confirmed COVID-19 deaths per million people
+* Hospitalization : Weekly new ICU admissions for COVID-19
+* Vaccination : Share of people vaccinated against COVID-19

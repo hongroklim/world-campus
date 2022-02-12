@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const navList = [
   {"link": "/profile", "name": "Profile"},
-  {"link": "/univList", "name": "List"},
+  {"link": "/programs", "name": "List"},
   {"link": "/wizard", "name": "Wizard"},
 ]
 

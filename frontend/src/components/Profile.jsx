@@ -1,31 +1,43 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import EngScore from "./EngScore"
 
 const nationalities = ['Israel', 'Singapore']
 
 const Profile = () => {
-  const [values, setValues] = useState({ "major": "", "loa": "N", "gpa": "" });
+  const [values, setValues] = useState({
+    "major": "", "loa": "N", "gpa": "", "gpa-max": "4.5",
+    "ibt": {"r": 0, "l": 0, "s": 0, "w": 0},
+    "ielts": {"r": 0, "l": 0, "s": 0, "w": 0},
+    "itp": 0
+  });
   
-  const handleChange = event => {
-    const { name, value } = event.target;
+  const updateValue = (name, value) => {
     setValues({ ...values, [name]: value });
   }
+
+  const handleChange = event => {
+    const { name, value } = event.target;
+    updateValue(name, value);
+  }
   
-  useEffect(() => {
-    console.log(values);
-  }, [values]);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // TODO save into IndexDB
+  }
 
   return (
     <>
       <h1>Profile</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
-          <label>Major</label>
+          <span>Major</span>
           <input name="major" type="text" value={values.major}
                  onChange={handleChange} />
         </div>
 
         <div>
-          <label>Nationality</label>
+          <span>Nationality</span>
           <select name="nationality" value={values.nationality}
                   onChange={handleChange}>
             <option value="">-</option>
@@ -36,7 +48,7 @@ const Profile = () => {
         </div>
         
         <div>
-          <label>Is Leave of Absence</label>
+          <span>Is Leave of Absence</span>
           <div>
             <label>
               <input name="loa" type="radio" value='N'
@@ -53,7 +65,7 @@ const Profile = () => {
         </div>
         
         <div>
-          <label>GPA</label>
+          <span>GPA</span>
           <div>
             <input name="gpa" type="number" value={values.gpa}
                    onChange={handleChange} />
@@ -66,6 +78,22 @@ const Profile = () => {
               <option value="100">100</option>
             </select>
           </div>
+        </div>
+
+        <EngScore testName="TOEFL IBT" testKey="ibt" scores={values.ibt}
+                  onUpdateScore={updateValue} />
+
+        <EngScore testName="IELTS" testKey="ielts" scores={values.ielts}
+                  onUpdateScore={updateValue} />
+
+        <div>
+          <span>TOEFL ITP</span>
+          <input name="itp" type="number" value={values.itp}
+                 onChange={handleChange} />
+        </div>
+
+        <div>
+          <input type="submit" value="Save" />
         </div>
       </form>
     </>

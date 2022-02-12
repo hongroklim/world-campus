@@ -1,9 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Profile from "./components/Profile"
+import Programs from "./components/Programs"
 import Navigator from "./components/Navigator"
-
-const Prof2 = () => <>prof2</>
 
 function App() {
   return (
@@ -11,6 +10,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/profile" element={<Profile />} />
+          <Route path="/programs" element={<Programs />} />
         </Routes>
       </div>
       <Navigator />

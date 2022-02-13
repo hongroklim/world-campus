@@ -1,4 +1,4 @@
-const PrgmItem = ({ info, onChangeFavorite }) => {
+const PrgmItem = ({ info, isFavorite, onChangeFavorite }) => {
   const handleFavorite = event => {
     event.stopPropagation();
     const seq = parseInt(event.target.getAttribute('data-sequence'));
@@ -16,7 +16,7 @@ const PrgmItem = ({ info, onChangeFavorite }) => {
             ? 'O'
             : 'X'}
         </span>
-        <button className={info.isFavorite ? "pin" : ""}
+        <button className={isFavorite ? "pin" : null} 
                 data-sequence={info.sequence}
                 onClick={handleFavorite}>pin</button>
       </div>

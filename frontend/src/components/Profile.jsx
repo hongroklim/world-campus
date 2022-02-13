@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import EngScore from "./EngScore"
 
+import { loadProfile } from "../utils/repo"
+
 const nationalities = ['Israel', 'Singapore']
 
 const Profile = () => {
@@ -24,6 +26,7 @@ const Profile = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // TODO save into IndexDB
+    console.log(values);
   }
 
   return (
@@ -93,7 +96,7 @@ const Profile = () => {
         </div>
 
         <div>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Save" formNoValidate />
         </div>
       </form>
     </>

@@ -16,7 +16,7 @@ const PrgmItem = ({ info, isFavorite, isAppliable, onChangeFavorite }) => {
             ? 'O'
             : 'X'}
         </span>
-        <button className={isFavorite ? "pin" : null} 
+        <button style={{"color": isFavorite ? "red" : null}}
                 data-sequence={info.sequence}
                 onClick={handleFavorite}>pin</button>
       </div>

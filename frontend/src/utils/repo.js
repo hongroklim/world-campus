@@ -18,3 +18,24 @@ export const loadProfile = () => ({
 });
 
 export const loadPrograms = () => rawData.program || [];
+
+export const loadLocations = () => {
+  const result = {};
+  const programs = loadPrograms();
+
+  for(const prgm of programs){
+    // Skip invalid items
+    if(!prgm.region || !prgm.country)
+      continue;
+
+    // Initialize region (Array)
+    if(!result.hasOwnProperty(prgm.region))
+      result[prgm.region] = [];
+
+    // Append country
+    if(!result[prgm.region].includes(prgm.country))
+      result[prgm.region].push(prgm.country);
+  }
+
+  return result;
+}

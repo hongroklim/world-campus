@@ -1,28 +1,9 @@
 import React, { useState, useEffect } from "react"
 
 import PrgmFilter from "./PrgmFilter"
-import PrgmItem from "./PrgmItem"
+import PrgmList from "./PrgmList"
 
-import { loadProfile, loadPrograms } from "../utils/repo"
-
-import { isAppliable } from "../utils/wizardSupport"
-
-const PrgmList = (props) => {
-  const userProfile = loadProfile();
-  
-  return (
-    <ul>
-      {props.prgms.map(e => (
-        <li key={e.sequence}>
-          <PrgmItem info={e}
-                isFavorite={props.favorites.includes(e.sequence)}
-                isAppliable={isAppliable(userProfile, e)}
-                onChangeFavorite={props.onChangeFavorite} />
-        </li>
-      ))}
-    </ul>
-  )
-}
+import { loadPrograms } from "../utils/repo"
 
 const Programs = () => {
   const [filters, setFilters] = useState([]);
@@ -34,6 +15,7 @@ const Programs = () => {
   };
   
   const handleFavorite = seq => {
+    // Add or Remove favorites for the given sequence
     setFavorites(favorites.includes(seq) ?
       favorites.filter(e => e !== seq) : favorites.concat([seq]));
   }

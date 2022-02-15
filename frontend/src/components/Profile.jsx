@@ -7,12 +7,7 @@ import { loadProfile } from "../utils/repo"
 const nationalities = ['Israel', 'Singapore']
 
 const Profile = () => {
-  const [values, setValues] = useState({
-    "major": "", "loa": "N", "gpa": "", "gpa-max": "4.5",
-    "ibt": {"r": 0, "l": 0, "s": 0, "w": 0},
-    "ielts": {"r": 0, "l": 0, "s": 0, "w": 0},
-    "itp": 0
-  });
+  const [values, setValues] = useState(loadProfile());
   
   const updateValue = (name, value) => {
     setValues({ ...values, [name]: value });
@@ -84,10 +79,10 @@ const Profile = () => {
         </div>
 
         <EngScore testName="TOEFL IBT" testKey="ibt" scores={values.ibt}
-                  onUpdateScore={updateValue} />
+                  isScoreSum={true} onUpdateScore={updateValue} />
 
         <EngScore testName="IELTS" testKey="ielts" scores={values.ielts}
-                  onUpdateScore={updateValue} />
+                  isScoreSum={false} onUpdateScore={updateValue} />
 
         <div>
           <span>TOEFL ITP</span>

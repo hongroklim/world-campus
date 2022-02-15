@@ -1,4 +1,4 @@
-const PrgmItem = ({ info, isFavorite, onChangeFavorite }) => {
+const PrgmItem = ({ info, isFavorite, isAppliable, onChangeFavorite }) => {
   const handleFavorite = event => {
     event.stopPropagation();
     const seq = parseInt(event.target.getAttribute('data-sequence'));
@@ -12,7 +12,7 @@ const PrgmItem = ({ info, isFavorite, onChangeFavorite }) => {
         <span>{info.region}</span>
         <span>{info.country}</span>
         <span>
-          {info.isApplicable
+          {isAppliable
             ? 'O'
             : 'X'}
         </span>

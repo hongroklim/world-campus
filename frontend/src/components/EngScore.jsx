@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
 const EngScore = (props) => {
   const [score, setScore] = useState(props.scores);
@@ -29,9 +29,13 @@ const EngScore = (props) => {
       <div>
         {/* Total Score */}
         <span>Score</span>
-        <input type="number" value={getSumScore(score)} readOnly />
+        {props.isScoreSum
+          ? (<input type="number" value={getSumScore(score)} readOnly />)
+          : (<input name={props.testKey} type="number" value={score[props.testKey]}
+                    onChange={handleChange} />)
+        }
 
-        {Object.keys(score).map(k => (
+        {['r', 'l', 's', 'w'].map(k => (
           <label key={k}>
             {k.toUpperCase()}
             <input name={k} type="number" value={score[k]}

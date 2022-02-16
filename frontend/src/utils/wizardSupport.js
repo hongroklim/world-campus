@@ -3,6 +3,7 @@
  *
  * @param {Object} profile - must contains either TOEFL IBT, IELTS, TOEFL ITP
  * @param {Object} univ - same as profile's one
+ * @return {Boolean}
  */
 const isEnglishEligible = (profile, univ) => {
   // TOEFL ITP
@@ -48,6 +49,7 @@ const isEnglishEligible = (profile, univ) => {
  *
  * @param {Object} profile - The user's profile
  * @param {Object} univ - The university's information to apply
+ * @returns {Boolean}
  */
 export const isAppliable = (profile, univ) => {
   // Major

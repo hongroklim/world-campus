@@ -38,4 +38,13 @@ export const loadLocations = () => {
   }
 
   return result;
+};
+
+export const loadProgram = (seq) => {
+  for(const e of loadPrograms()){
+    if(e.sequence === seq)
+      return e;
+  }
+
+  return {};
 }

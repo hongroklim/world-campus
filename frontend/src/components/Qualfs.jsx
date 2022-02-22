@@ -1,9 +1,8 @@
-import { getLinkText } from "../utils/elements"
+import { getLinkText, getListItems } from "../utils/elements"
+
+import QualfEng from "./QualfEng"
 
 const Qualfs = ({ program }) => {
-
-  console.log(program);
-
   return (
     <div>
       <h3>Qualifications</h3>
@@ -15,28 +14,46 @@ const Qualfs = ({ program }) => {
 
         <div>
           <span>English Requirements</span>
+          <QualfEng program={program} />
         </div>
         
         <div>
           <span>Majors</span>
+          <ul>
+            {getListItems(program['restrict-major']).map(e => (
+              <li key={e.text}>
+                {e.yn ? 'O' : 'X'}
+                {getLinkText(e.text)}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
           <span>Nationality</span>
+          <ul>
+            {getListItems(program['restrict-nationality']).map(e => (
+              <li key={e.text}>
+                {e.text}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div>
           <span>Others</span>
-          <li>
-            Leave of Absence :&nbsp; 
-            {program["restrict-loa"] === 'X' ? 'Available' : 'Restrict'}
-          </li>
-          {(program["restrict-others"]||'').split('\n')
-              .filter(e => e.trim()).map(e => (
-            <li key={e[0]}>
-              {getLinkText(e)}
+          <ul>
+            <li>
+              Leave of Absence :&nbsp; 
+              {program["restrict-loa"] === 'X' ? 'Available' : 'Restrict'}
             </li>
-          ))}
+            {(program["restrict-others"]||'').split('\n')
+                .filter(e => e.trim()).map(e => (
+              <li key={e[0]}>
+                {getLinkText(e)}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

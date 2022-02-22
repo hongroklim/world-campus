@@ -17,6 +17,26 @@ export const getLinkText = (text) => {
   return text;
 }
 
+/**
+ * Parse "|" separated items into list elements
+ *
+ * @param {String} text - | (O|X) separated items
+ * @returns {List<Object>} - {"yn": Boolean, "text": String}
+ */
 export const getListItems = (text) => {
-  return [];
+  if(!text)
+    return [];
+
+  return text.split('|').filter(e => e).map(e => {
+    const item = {};
+    item.text = e.trim();
+
+    // Set YN if the label exists
+    if(/^\([O|X]\)/g.test(item.text)){
+      item.yn = item.text.startsWith("(O)");
+      item.text = item.text.replace(/^\([O|X]\)\s*/g, '');
+    }
+
+    return item;
+  });
 }

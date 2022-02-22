@@ -17,7 +17,8 @@ export const loadProfile = () => ({
   "major": "Information Systems"
 });
 
-export const loadPrograms = () => rawData.program || [];
+export const loadPrograms = () => (rawData.program || []);
+export const loadUniversities = () => (rawData.university || []);
 
 export const loadLocations = () => {
   const result = {};
@@ -47,4 +48,14 @@ export const loadProgram = (seq) => {
   }
 
   return {};
-}
+};
+
+export const loadUniversity = (name) => {
+  const universities = loadUniversities();
+  for(const e in universities){
+    if(e=== name)
+      return universities[e];
+  }
+
+  return {};
+};

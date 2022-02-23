@@ -1,13 +1,10 @@
-import React, { useState } from "react"
-
 import UnivRanks from "./UnivRanks"
-
-import { loadUniversity } from "../utils/repo"
 
 const labelList = [
   {"key": 'established', "label": 'Established'},
   {"key": 'student-number', "label": 'Students'},
-  {"key": 'faculty-number', "label": 'Faculties'}
+  {"key": 'faculty-number', "label": 'Faculties'},
+  {"key": 'campus-size', "label": 'Campus Size'}
 ]
   
 const UnivDetail = ({ univ }) => {

@@ -6,6 +6,10 @@ const ranks = {
   "hum": "Humanity"
 }
 
+const existRank = (univ, rankLabel) => {
+  return univ[`${rankLabel}-rank`];
+}
+
 const matchRank = (label, key) => {
   return key.startsWith(`${label}-`) && !key.endsWith('-score');
 }
@@ -22,13 +26,18 @@ const UnivRanks = ({ univ }) => {
     setLabel(label !== tobeLabel ? tobeLabel : null);
   }
 
+  if(!Object.keys(ranks).some(e => existRank(univ, e)))
+    return (<></>);
+
   return (
     <div>
       <div>
-        {Object.keys(ranks).map(e => (
+        {Object.keys(ranks)
+            .filter(e => existRank(univ, e)).map(e => (
           <div key={e} className={label === e ? 'label-active' : null}
                 onClick={()=>handleChange(e)}>
-            {ranks[e]}
+            <span>{ranks[e]}</span>
+            <span>{univ[`${e}-rank`]}</span>
           </div>
         ))}
       </div>

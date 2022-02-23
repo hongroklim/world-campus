@@ -3,6 +3,10 @@ import { useParams } from "react-router-dom"
 
 import Qualfs from "./Qualfs"
 import UnivDetail from "./UnivDetail"
+import Courses from "./Courses"
+import Accomm from "./Accomm"
+import Weather from "./Weather"
+import Covid19 from "./Covid19"
 
 import { loadProgram, loadUniversity } from "../utils/repo"
 import { getListItems } from "../utils/elements"
@@ -52,6 +56,14 @@ const Detail = (props) => {
       <Qualfs program={program} />
       
       <UnivDetail univ={univ} />
+
+      <Courses program={program} />
+      
+      <Accomm program={program} />
+
+      {univ['city-id'] ? <Weather cityId={univ['city-id']} /> : null}
+
+      {univ['country-code'] ? <Covid19 ctryCode={univ['country-code']} /> : null}
     </>
   );
 }

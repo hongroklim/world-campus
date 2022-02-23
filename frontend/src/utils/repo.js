@@ -19,6 +19,7 @@ export const loadProfile = () => ({
 
 export const loadPrograms = () => (rawData.program || []);
 export const loadUniversities = () => (rawData.university || []);
+export const loadWeathers = () => (rawData.weather || []);
 
 export const loadLocations = () => {
   const result = {};
@@ -51,11 +52,9 @@ export const loadProgram = (seq) => {
 };
 
 export const loadUniversity = (name) => {
-  const universities = loadUniversities();
-  for(const e in universities){
-    if(e=== name)
-      return universities[e];
-  }
+  return (loadUniversities()[name] || {});
+};
 
-  return {};
+export const loadWeather = (cityId) => {
+  return (loadWeathers()[cityId] || {});
 };

@@ -1,4 +1,20 @@
 /**
+ * Create link button with given url
+ *
+ * @param {String} src - target URL
+ * @param {String} option.text - display text
+ * @returns {Element}
+ */
+export const getLinkBtn = (src, option) => {
+  if(!src) return null;
+
+  const opt = option || {};
+  const text = opt.text || 'link';
+
+  return (<a target='_blank' href={src}>{text}</a>);
+}
+
+/**
  * Get converted text which is applied of hyperlink
  *
  * @param {String} text - text to be parsed

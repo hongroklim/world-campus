@@ -1,9 +1,9 @@
-import { getLinkText } from "../utils/elements"
+import { getLinkBtn, getLinkText } from "../utils/elements"
 
 const Courses = ({ program }) => {
   return (
     <div>
-      <h3>Courses</h3>
+      <h3>Courses {getLinkBtn(program['course-link'])}</h3>
       <ul>
         <li>In English : {program['course-english'] === 'O' ? 'O' : 'X'}</li>
         <li>Taking Other Majors : {program['course-taking-others'] === 'O' ? 'O' : 'X'}</li>
@@ -13,10 +13,11 @@ const Courses = ({ program }) => {
           <h4>Notes</h4>
           <div>{getLinkText(program['course-notes'])}</div>
         </div> : null}
-      <div>
-        <h4>Restrictions</h4>
-        <div>{getLinkText(program['course-restriction'])}</div>
-      </div>
+      {program['course-restriction'] ?
+        <div>
+          <h4>Restrictions</h4>
+          <div>{getLinkText(program['course-restriction'])}</div>
+        </div> : null}
     </div>
   )
 }

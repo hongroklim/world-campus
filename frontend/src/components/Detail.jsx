@@ -9,12 +9,12 @@ import Weather from "./Weather"
 import Covid19 from "./Covid19"
 
 import { loadProgram, loadUniversity } from "../utils/repo"
-import { getListItems } from "../utils/elements"
+import { getLinkBtn, getListItems } from "../utils/elements"
 
 const Recruit = ({ program }) => {
   return (
     <div>
-      <h3>Recruit</h3>
+      <h3>Recruit {getLinkBtn(program['official-link'])}</h3>
       <ul>
         <li>Number : {program['recruit-number']}</li>
         <li>Period : {getListItems(program.period).map(e => (

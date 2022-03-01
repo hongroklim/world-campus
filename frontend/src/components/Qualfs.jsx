@@ -3,6 +3,9 @@ import { getLinkText, getListItems } from "../utils/elements"
 import QualfEng from "./QualfEng"
 
 const Qualfs = ({ program }) => {
+  const majors = getListItems(program['restrict-major']);
+  const nationalities = getListItems(program['restrict-nationality']);
+
   return (
     <div>
       <h3>Qualifications</h3>
@@ -17,28 +20,31 @@ const Qualfs = ({ program }) => {
           <QualfEng program={program} />
         </div>
         
-        <div>
-          <span>Majors</span>
-          <ul>
-            {getListItems(program['restrict-major']).map(e => (
-              <li key={e.text}>
-                {e.yn ? 'O' : 'X'}
-                {getLinkText(e.text)}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {majors.length > 0 ?
+          <div>
+            <span>Majors</span>
+            <ul>
+              {majors.map(e => (
+                <li key={e.text}>
+                  {e.yn ? 'O' : 'X'}
+                  {e.text}
+                </li>
+              ))}
+            </ul>
+          </div> : null}
 
-        <div>
-          <span>Nationality</span>
-          <ul>
-            {getListItems(program['restrict-nationality']).map(e => (
-              <li key={e.text}>
-                {e.text}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {nationalities.length > 0 ?
+          <div>
+            <span>Nationality</span>
+            <ul>
+              {nationalities.map(e => (
+                <li key={e.text}>
+                  {e.yn ? 'O' : 'X'}
+                  {e.text}
+                </li>
+              ))}
+            </ul>
+          </div> : null}
 
         <div>
           <span>Others</span>

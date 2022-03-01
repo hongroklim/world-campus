@@ -3,23 +3,15 @@ import React, { useState, useEffect } from "react"
 import PrgmFilter from "./PrgmFilter"
 import PrgmList from "./PrgmList"
 
-import { loadPrograms } from "../utils/repo"
-
-const defaultFilters = {
-  "program": '',
-  "region": [],
-  "country": [],
-  "isAppliable": false,
-  "isFavorite": false
-};
+import { loadPrograms, DEFAULT_FILTERS } from "../utils/repo"
 
 const Programs = () => {
-  const [filters, setFilters] = useState(defaultFilters);
+  const [filters, setFilters] = useState(DEFAULT_FILTERS);
   const [favorites, setFavorites] = useState([])
   const [prgms, setPrgms] = useState(loadPrograms());
 
   const handleFilter = data => {
-    setFilters(data||defaultFilters);
+    setFilters(data);
   };
   
   const handleFavorite = seq => {
@@ -36,8 +28,7 @@ const Programs = () => {
   return (
     <>
       <h1>Exchange Programs</h1>
-      <PrgmFilter filters={filters} defaults={defaultFilters}
-                  onUpdate={handleFilter} /> 
+      <PrgmFilter filters={filters} onUpdate={handleFilter} /> 
       <PrgmList prgms={prgms} filters={filters} favorites={favorites}
                 onChangeFavorite={handleFavorite} />
     </>

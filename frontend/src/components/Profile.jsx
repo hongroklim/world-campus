@@ -4,7 +4,12 @@ import EngScore from "./EngScore"
 
 import { loadProfile } from "../utils/repo"
 
-const nationalities = ['Israel', 'Singapore']
+const nationalities = ['Israel', 'Singapore'];
+
+const loaItems = [
+  {"label": 'No', "value": 'N'},
+  {"label": 'Yes', "value": 'Y'}
+]
 
 const Profile = () => {
   const [values, setValues] = useState(loadProfile());
@@ -48,17 +53,13 @@ const Profile = () => {
         <div>
           <span>Is Leave of Absence</span>
           <div>
-            <label>
-              <input name="loa" type="radio" value='N'
-                     onChange={handleChange} checked={values.loa === 'N'} />
-              No
-            </label>
-            &nbsp;
-            <label>
-              <input name="loa" type="radio" value='Y'
-                     onChange={handleChange} checked={values.loa === 'Y'} />
-              Yes
-            </label>
+            {loaItems.map(e => (
+              <label>
+                <input name="loa" type="radio" key={e.value} value={e.value}
+                       onChange={handleChange} checked={values.loa === e.value} />
+                {e.label}
+              </label>
+            ))}
           </div>
         </div>
         

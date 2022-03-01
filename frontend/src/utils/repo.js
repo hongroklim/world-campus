@@ -1,6 +1,6 @@
 import rawData from "../world-campus"
 
-const defaultProfile = {
+const DEFAULT_PROFILE = {
   "major": "", "loa": "N", "gpa": "", "gpa-max": "4.5",
   "ibt": {"r": 0, "l": 0, "s": 0, "w": 0},
   "ielts": {"ielts": 0, "r": 0, "l": 0, "s": 0, "w": 0},
@@ -16,6 +16,18 @@ export const loadProfile = () => ({
   "loa": "N",
   "major": "Information Systems"
 });
+
+export const DEFAULT_FILTERS = {
+  "program": '',
+  "region": [],
+  "country": [],
+  "isAppliable": false,
+  "isFavorite": false,
+  "allowLoa": false,
+  "courseEng": false,
+  "otherMajor": false,
+  "accomodation": 'all'
+};
 
 export const loadPrograms = () => (rawData.program || []);
 export const loadUniversities = () => (rawData.university || []);

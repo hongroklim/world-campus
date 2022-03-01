@@ -102,3 +102,47 @@ export const isAppliable = (profile, univ) => {
 
   return true;
 }
+
+/**
+ * Compare two arrays ignoring their sequences
+ *
+ * @params {Array} arr1 - comparing one
+ * @params {Array} arr2 - comparing one
+ * @returns {Boolean}
+ */
+export const arrEquals = (arr1, arr2) => {
+  if(!Array.isArray(arr1) || typeof arr1 !== typeof arr2)
+    return false;
+
+  if(arr1.length !== arr2.length)
+    return false;
+
+  return arr1.sort().toString() === arr2.sort().toString();
+}
+
+/**
+ * Compare two objects
+ *
+ * @params {Object} obj1
+ * @params {Object} obj2
+ * @returns {Boolean}
+ */
+export const objEquals = (obj1, obj2) => {
+  const key1 = Object.keys(obj1);
+  const key2 = Object.keys(obj2);
+
+  if(!arrEquals(key1, key2))
+    return false;
+
+  for(const k of key1){
+    if(Array.isArray(obj1[k])){
+      if(!arrEquals(obj1[k], obj2[k]))
+        return false;
+
+    }else if(obj1[k] !== obj2[k]){
+      return false;
+    }
+  }
+
+  return true;
+}

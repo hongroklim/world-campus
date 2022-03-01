@@ -1,54 +1,52 @@
 import React, { useState, useEffect } from "react"
 
-import { loadLocations } from "../utils/repo"
+import { loadLocations, DEFAULT_FILTERS } from "../utils/repo"
+
+const checkboxItems = [
+  {"key": 'isAppliable', "label": 'Appliable'},
+  {"key": 'isFavorite', "label": 'Favorites'},
+  {"key": 'allowLoa', "label": 'Allow Leave of Absence'},
+  {"key": 'courseEng', "label": 'Courses in English'},
+  {"key": 'otherMajor', "label": 'Taking Other Majors'}
+];
 
 const PrgmFilter = (props) => {
   const [filters, setFilters] = useState(props.filters);
+  const hiddenItems = props.hidden || [];
   
   const locations = loadLocations();
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const key = event.target.getAttribute('data-key');
     const value = event.target.getAttribute('data-value');
+    
+    if(checkboxItems.some(e => key === e.key)){
+      setFilters({ ...filters, [key]: !filters[key] });
 
-    switch (key) {
-      case 'program':
-        const prgmName = event.target.value;
-        setFilters({ ...filters, [key]: prgmName });
-        break;
+    }else if(key === 'program'){
+      const prgmName = event.target.value;
+      setFilters({ ...filters, [key]: prgmName });
 
-      case 'isAppliable':
-      case 'isFavorite':
-        setFilters({ ...filters, [key]: !filters[key] });
-        break;
+    }else if(key === 'region'){
+      let regions = filters[key];
+      const isAppend = !regions.includes(value);
 
-      case 'region':
-        let regions = filters[key];
-        const isAppend = !regions.includes(value);
+      regions = !isAppend
+                ? regions.filter(e => e !== value)
+                : regions.concat([value]);
+      
+      const accepts = regions.reduce((l, e) => l.concat(locations[e]), []);
+      let countries = filters.country;
+      countries = countries.filter(e => accepts.includes(e));
+      
+      setFilters({ ...filters, [key]: regions, "country": countries });
 
-        regions = !isAppend
-                  ? regions.filter(e => e !== value)
-                  : regions.concat([value]);
-        
-        // Remove not included countries
-        if(key === 'region'){
-          const accepts = regions.reduce((l, e) => l.concat(locations[e]), []);
-          let countries = filters.country;
-          countries = countries.filter(e => accepts.includes(e));
-          
-          setFilters({ ...filters, [key]: regions, "country": countries });
-        }
-
-        break;
-
-      case 'country':
-        let countries = filters[key];
-        countries = countries.includes(value)
-                    ? countries.filter(e => e !== value)
-                    : countries.concat([value]);
-        setFilters({ ...filters, [key]: countries });
-        break;
-      default:
+    }else if(key === 'country'){
+      let countries = filters[key];
+      countries = countries.includes(value)
+                  ? countries.filter(e => e !== value)
+                  : countries.concat([value]);
+      setFilters({ ...filters, [key]: countries });
     }
   };
  
@@ -59,8 +57,10 @@ const PrgmFilter = (props) => {
   return (
     <div>
       <div>
-        <input data-key="program" type="text" placeholder="Program Name"
-                value={filters.program} onChange={handleChange} />
+        {!hiddenItems.includes('program') ?
+          <input data-key="program" type="text" placeholder="Program Name"
+                  value={filters.program} onChange={handleChange} />
+        : null}
 
         <div>
           <span>Region</span>
@@ -90,20 +90,20 @@ const PrgmFilter = (props) => {
                   </button>
            ))}
         </div>
+        
+        <div>
+          {/* Checkbox Items */}
+          {checkboxItems.map(e => (
+            <label key={e.key}>
+              <input type="checkbox" defaultChecked={filters[e.key]}
+                      onChange={handleChange} data-key={e.key} />
+              {e.label}
+            </label>
+          ))}
+        </div>
 
         <div>
-          <label>
-            <input type="checkbox" defaultChecked={filters.isAppliable}
-                    onChange={handleChange} data-key="isAppliable" />
-            Appliable
-          </label>
-          <label>
-            <input type="checkbox" defaultChecked={filters.isFavorite}
-                    onChange={handleChange} data-key="isFavorite" />
-            Favorites
-          </label>
-
-          <button type="button" onClick={() => setFilters(props.defaults)}>
+          <button type="button" onClick={() => setFilters(DEFAULT_FILTERS)}>
             clear
           </button>
         </div>

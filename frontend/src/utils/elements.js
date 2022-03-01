@@ -9,9 +9,26 @@ export const getLinkBtn = (src, option) => {
   if(!src) return null;
 
   const opt = option || {};
-  const text = opt.text || 'link';
+  const text = opt.text || 'Link';
 
-  return (<a target='_blank' href={src}>{text}</a>);
+  return (<a href={src} target='_blank' rel='noreferrer'>{text}</a>);
+}
+
+/**
+ * Create link button to show search page
+ *
+ * @param {String} keyword - search target
+ * @param {Object} option - @see #getLinkBtn
+ * @returns {Element}
+ */
+export const getSearchBtn = (keyword, option) => {
+  if(!keyword) return null;
+
+  const src = `http://www.google.com/search?q=${encodeURIComponent(keyword)}`;
+  const opt = option || {};
+  opt.text = opt.text || 'Search';
+
+  return getLinkBtn(src, opt);
 }
 
 /**

@@ -7,6 +7,7 @@ import Courses from "./Courses"
 import Accomm from "./Accomm"
 import Weather from "./Weather"
 import Covid19 from "./Covid19"
+import Map from "./Map"
 
 import { loadProgram, loadUniversity } from "../utils/repo"
 import { getLinkBtn, getListItems } from "../utils/elements"
@@ -14,7 +15,10 @@ import { getLinkBtn, getListItems } from "../utils/elements"
 const Recruit = ({ program }) => {
   return (
     <div>
-      <h3>Recruit {getLinkBtn(program['official-link'])}</h3>
+      <h3>
+        Recruit
+        {getLinkBtn(program['official-link'])}
+      </h3>
       <ul>
         <li>Number : {program['recruit-number']}</li>
         <li>Period : {getListItems(program.period).map(e => (
@@ -55,11 +59,13 @@ const Detail = (props) => {
 
       <Qualfs program={program} />
       
-      <UnivDetail univ={univ} />
+      <UnivDetail univ={univ} univName={program['university-name']} />
 
       <Courses program={program} />
       
       <Accomm program={program} />
+
+      {univ['map-iframe'] ? <Map link={univ['map-iframe']} /> : null}
 
       {univ['city-id'] ? <Weather cityId={univ['city-id']} /> : null}
 

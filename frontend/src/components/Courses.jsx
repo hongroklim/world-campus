@@ -1,4 +1,4 @@
-import { getLinkBtn, getLinkText } from "../utils/elements"
+import { getLinkBtn, getListItems, getLinkText } from "../utils/elements"
 
 const Courses = ({ program }) => {
   return (
@@ -16,7 +16,11 @@ const Courses = ({ program }) => {
       {program['course-restriction'] ?
         <div>
           <h4>Restrictions</h4>
-          <div>{getLinkText(program['course-restriction'])}</div>
+          <ul>
+            {getListItems(program['course-restriction']).map(e => (
+              <li key={e.text}>{getLinkText(e.text)}</li>
+            ))}
+          </ul>
         </div> : null}
     </div>
   )

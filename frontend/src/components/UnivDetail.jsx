@@ -1,6 +1,6 @@
 import UnivRanks from "./UnivRanks"
 
-import { getLinkBtn } from "../utils/elements"
+import { getLinkBtn, getSearchBtn } from "../utils/elements"
 
 const labelList = [
   {"key": 'established', "label": 'Established'},
@@ -9,10 +9,14 @@ const labelList = [
   {"key": 'campus-size', "label": 'Campus Size'}
 ]
   
-const UnivDetail = ({ univ }) => {
+const UnivDetail = ({ univ, univName }) => {
   return (
     <div>
-      <h3>University {getLinkBtn(univ['official-link'])}</h3>
+      <h3>
+        University
+        {getLinkBtn(univ['official-link'])}
+        {getSearchBtn(univName)}
+      </h3>
       <div>
         {labelList.filter(e => univ[e.key]).map(e => (
           <div key={e.key}>

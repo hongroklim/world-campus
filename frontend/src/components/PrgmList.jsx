@@ -26,6 +26,15 @@ const PrgmList = (props) => {
     if(props.filters.isFavorite && !props.favorites.includes(e.sequence))
       return false;
 
+    if(props.filters.allowLoa && e['restrict-loa'] === 'O')
+      return false;
+
+    if(props.filters.courseEng && e['course-english'] === 'X')
+      return false;
+
+    if(props.filters.otherMajor && e['course-taking-others'] === 'X')
+      return false;
+
     return true;
   }
 
